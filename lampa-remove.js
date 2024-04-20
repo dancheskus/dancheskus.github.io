@@ -1,9 +1,13 @@
 (function () {
-  hideItemsFromMenu()
-  test()
+  Lampa.Listener.follow('app', e => {
+    if (e.type !== 'ready') return
+
+    getInitialState()
+    main()
+  });
 })();
 
-const hideItemsFromMenu = () => {
+const getInitialState = () => {
   const hiddenMenuItems = JSON.parse(localStorage.getItem('hiddenMenuItems')) || []
   hiddenMenuItems.forEach(item => {
     document.querySelector(`[data-action=${item}]`).style.display = 'none'
@@ -23,7 +27,7 @@ const pencilIcon = `
   </svg>
 `
 
-const test = () => {
+const main = () => {
   const newButton = document.querySelector('[data-action=main]').cloneNode(true)
   document.querySelector('[data-action=settings]').insertAdjacentElement('afterend', newButton)
   newButton.querySelector('.menu__text').innerText = 'Edit'
