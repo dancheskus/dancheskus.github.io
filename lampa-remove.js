@@ -271,13 +271,13 @@
   }
 
   function component() {
-    // var network = new Lampa.Reguest();
-    // var scroll = new Lampa.Scroll({
-    //   mask: true,
-    //   over: true
-    // });
+    var network = new Lampa.Reguest();
+    var scroll = new Lampa.Scroll({
+      mask: true,
+      over: true
+    });
     var items = [];
-    // var html = $('<div></div>');
+    var html = $('<div></div>');
     var active = 0;
 
     this.create = function () {
