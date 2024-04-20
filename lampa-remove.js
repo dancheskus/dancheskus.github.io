@@ -493,7 +493,7 @@
         });
         $('.menu .menu__list').eq(0).append(button);
         $('body').append(Lampa.Template.get('radio_style', {}, true));
-        window.radio_player.create();
+        // window.radio_player.create();
       }
     });
   }
