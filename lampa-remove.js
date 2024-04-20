@@ -368,9 +368,9 @@
 
     this.stop = function () { };
 
-  //   this.render = function () {
-  //     return html;
-  //   };
+    this.render = function () {
+      return html;
+    };
 
   //   this.destroy = function () {
   //     network.clear();
