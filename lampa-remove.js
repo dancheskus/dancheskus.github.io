@@ -318,39 +318,39 @@
     //   this.activity.toggle();
     // };
 
-    // this.append = function (element) {
-    //   var item = new create(element);
-    //   item.create();
-    //   item.onDown = this.down.bind(this);
-    //   item.onUp = this.up.bind(this);
-    //   item.onBack = this.back.bind(this);
-    //   scroll.append(item.render());
-    //   items.push(item);
-    // };
+    this.append = function (element) {
+      var item = new create(element);
+      item.create();
+      item.onDown = this.down.bind(this);
+      item.onUp = this.up.bind(this);
+      item.onBack = this.back.bind(this);
+      scroll.append(item.render());
+      items.push(item);
+    };
 
-    // this.back = function () {
-    //   Lampa.Activity.backward();
-    // };
+    this.back = function () {
+      Lampa.Activity.backward();
+    };
 
-    // this.down = function () {
-    //   active++;
-    //   active = Math.min(active, items.length - 1);
-    //   items[active].toggle();
-    //   scroll.update(items[active].render());
-    // };
+    this.down = function () {
+      active++;
+      active = Math.min(active, items.length - 1);
+      items[active].toggle();
+      scroll.update(items[active].render());
+    };
 
-    // this.up = function () {
-    //   active--;
+    this.up = function () {
+      active--;
 
-    //   if (active < 0) {
-    //     active = 0;
-    //     Lampa.Controller.toggle('head');
-    //   } else {
-    //     items[active].toggle();
-    //   }
+      if (active < 0) {
+        active = 0;
+        Lampa.Controller.toggle('head');
+      } else {
+        items[active].toggle();
+      }
 
-    //   scroll.update(items[active].render());
-    // };
+      scroll.update(items[active].render());
+    };
 
     this.start = function () {
       Lampa.Controller.add('content', {
@@ -364,9 +364,9 @@
       Lampa.Controller.toggle('content');
     };
 
-  //   this.pause = function () { };
+    this.pause = function () { };
 
-  //   this.stop = function () { };
+    this.stop = function () { };
 
   //   this.render = function () {
   //     return html;
