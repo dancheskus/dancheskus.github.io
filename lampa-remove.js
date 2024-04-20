@@ -7,13 +7,12 @@
   });
 })();
 
+const menuItems = ['anime', 'timetable', 'feed', 'myperson', 'subscribes', 'about']
+
 const removeItemsFromMenu = () => {
-  $("[data-action=anime]").eq(0).remove();
-  $("[data-action=timetable]").eq(0).remove();
-  $("[data-action=feed]").eq(0).remove();
-  $("[data-action=myperson]").eq(0).remove();
-  $("[data-action=subscribes]").eq(0).remove();
-  $("[data-action=about]").eq(0).remove();
+  menuItems.forEach(item => {
+    $(`[data-action=${item}]`).remove();
+  })
 }
 
 const test = () => {
