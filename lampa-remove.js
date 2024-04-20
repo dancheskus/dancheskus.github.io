@@ -280,43 +280,43 @@
     // var html = $('<div></div>');
     var active = 0;
 
-    // this.create = function () {
-    //   var _this = this;
+    this.create = function () {
+      var _this = this;
 
-    //   this.activity.loader(true);
-    //   network["native"]('https://cors.apn.monster/https://www.radiorecord.ru/api/stations/', this.build.bind(this), function () {
-    //     var empty = new Lampa.Empty();
-    //     html.append(empty.render());
-    //     _this.start = empty.start;
+      this.activity.loader(true);
+      network["native"]('https://cors.apn.monster/https://www.radiorecord.ru/api/stations/', this.build.bind(this), function () {
+        var empty = new Lampa.Empty();
+        html.append(empty.render());
+        _this.start = empty.start;
 
-    //     _this.activity.loader(false);
+        _this.activity.loader(false);
 
-    //     _this.activity.toggle();
-    //   });
-    //   Lampa.Background.immediately('');
-    //   return this.render();
-    // };
+        _this.activity.toggle();
+      });
+      Lampa.Background.immediately('');
+      return this.render();
+    };
 
-    // this.build = function (data) {
-    //   var _this2 = this;
+    this.build = function (data) {
+      var _this2 = this;
 
-    //   scroll.minus();
-    //   html.append(scroll.render());
-    //   data.result.genre.forEach(function (element) {
-    //     var results = data.result.stations.filter(function (station) {
-    //       return station.genre.filter(function (genre) {
-    //         return genre.id == element.id;
-    //       }).length;
-    //     });
+      scroll.minus();
+      html.append(scroll.render());
+      data.result.genre.forEach(function (element) {
+        var results = data.result.stations.filter(function (station) {
+          return station.genre.filter(function (genre) {
+            return genre.id == element.id;
+          }).length;
+        });
 
-    //     _this2.append({
-    //       title: element.name,
-    //       results: results
-    //     });
-    //   });
-    //   this.activity.loader(false);
-    //   this.activity.toggle();
-    // };
+        _this2.append({
+          title: element.name,
+          results: results
+        });
+      });
+      this.activity.loader(false);
+      this.activity.toggle();
+    };
 
     this.append = function (element) {
       var item = new create(element);
