@@ -1,10 +1,6 @@
 (function () {
-  Lampa.Listener.follow('app', e => {
-    if (e.type !== 'ready') return
-
-    hideItemsFromMenu()
-    test()
-  });
+  hideItemsFromMenu()
+  test()
 })();
 
 const hideItemsFromMenu = () => {
