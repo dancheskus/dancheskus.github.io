@@ -271,98 +271,98 @@
   }
 
   function component() {
-  //   var network = new Lampa.Reguest();
-  //   var scroll = new Lampa.Scroll({
-  //     mask: true,
-  //     over: true
-  //   });
-  //   var items = [];
-  //   var html = $('<div></div>');
-  //   var active = 0;
+    // var network = new Lampa.Reguest();
+    // var scroll = new Lampa.Scroll({
+    //   mask: true,
+    //   over: true
+    // });
+    // var items = [];
+    // var html = $('<div></div>');
+    // var active = 0;
 
-  //   this.create = function () {
-  //     var _this = this;
+    // this.create = function () {
+    //   var _this = this;
 
-  //     this.activity.loader(true);
-  //     network["native"]('https://cors.apn.monster/https://www.radiorecord.ru/api/stations/', this.build.bind(this), function () {
-  //       var empty = new Lampa.Empty();
-  //       html.append(empty.render());
-  //       _this.start = empty.start;
+    //   this.activity.loader(true);
+    //   network["native"]('https://cors.apn.monster/https://www.radiorecord.ru/api/stations/', this.build.bind(this), function () {
+    //     var empty = new Lampa.Empty();
+    //     html.append(empty.render());
+    //     _this.start = empty.start;
 
-  //       _this.activity.loader(false);
+    //     _this.activity.loader(false);
 
-  //       _this.activity.toggle();
-  //     });
-  //     Lampa.Background.immediately('');
-  //     return this.render();
-  //   };
+    //     _this.activity.toggle();
+    //   });
+    //   Lampa.Background.immediately('');
+    //   return this.render();
+    // };
 
-  //   this.build = function (data) {
-  //     var _this2 = this;
+    // this.build = function (data) {
+    //   var _this2 = this;
 
-  //     scroll.minus();
-  //     html.append(scroll.render());
-  //     data.result.genre.forEach(function (element) {
-  //       var results = data.result.stations.filter(function (station) {
-  //         return station.genre.filter(function (genre) {
-  //           return genre.id == element.id;
-  //         }).length;
-  //       });
+    //   scroll.minus();
+    //   html.append(scroll.render());
+    //   data.result.genre.forEach(function (element) {
+    //     var results = data.result.stations.filter(function (station) {
+    //       return station.genre.filter(function (genre) {
+    //         return genre.id == element.id;
+    //       }).length;
+    //     });
 
-  //       _this2.append({
-  //         title: element.name,
-  //         results: results
-  //       });
-  //     });
-  //     this.activity.loader(false);
-  //     this.activity.toggle();
-  //   };
+    //     _this2.append({
+    //       title: element.name,
+    //       results: results
+    //     });
+    //   });
+    //   this.activity.loader(false);
+    //   this.activity.toggle();
+    // };
 
-  //   this.append = function (element) {
-  //     var item = new create(element);
-  //     item.create();
-  //     item.onDown = this.down.bind(this);
-  //     item.onUp = this.up.bind(this);
-  //     item.onBack = this.back.bind(this);
-  //     scroll.append(item.render());
-  //     items.push(item);
-  //   };
+    // this.append = function (element) {
+    //   var item = new create(element);
+    //   item.create();
+    //   item.onDown = this.down.bind(this);
+    //   item.onUp = this.up.bind(this);
+    //   item.onBack = this.back.bind(this);
+    //   scroll.append(item.render());
+    //   items.push(item);
+    // };
 
-  //   this.back = function () {
-  //     Lampa.Activity.backward();
-  //   };
+    // this.back = function () {
+    //   Lampa.Activity.backward();
+    // };
 
-  //   this.down = function () {
-  //     active++;
-  //     active = Math.min(active, items.length - 1);
-  //     items[active].toggle();
-  //     scroll.update(items[active].render());
-  //   };
+    // this.down = function () {
+    //   active++;
+    //   active = Math.min(active, items.length - 1);
+    //   items[active].toggle();
+    //   scroll.update(items[active].render());
+    // };
 
-  //   this.up = function () {
-  //     active--;
+    // this.up = function () {
+    //   active--;
 
-  //     if (active < 0) {
-  //       active = 0;
-  //       Lampa.Controller.toggle('head');
-  //     } else {
-  //       items[active].toggle();
-  //     }
+    //   if (active < 0) {
+    //     active = 0;
+    //     Lampa.Controller.toggle('head');
+    //   } else {
+    //     items[active].toggle();
+    //   }
 
-  //     scroll.update(items[active].render());
-  //   };
+    //   scroll.update(items[active].render());
+    // };
 
-  //   this.start = function () {
-  //     Lampa.Controller.add('content', {
-  //       toggle: function toggle() {
-  //         if (items.length) {
-  //           items[active].toggle();
-  //         }
-  //       },
-  //       back: this.back
-  //     });
-  //     Lampa.Controller.toggle('content');
-  //   };
+    this.start = function () {
+      Lampa.Controller.add('content', {
+        toggle: function toggle() {
+          if (items.length) {
+            items[active].toggle();
+          }
+        },
+        back: this.back
+      });
+      Lampa.Controller.toggle('content');
+    };
 
   //   this.pause = function () { };
 
